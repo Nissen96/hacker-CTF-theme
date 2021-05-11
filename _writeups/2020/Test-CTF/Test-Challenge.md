@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: Test Writeup
+title: Test Challenge
 ctf: Test CTF
 points: 123
 solves: 1234
