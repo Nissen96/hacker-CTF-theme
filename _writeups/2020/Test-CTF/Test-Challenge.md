@@ -26,3 +26,10 @@ Add the assets in `assets/CTFs/<CTF_Name>/<File_Name>` and link to it here.
 ><code class="language-bash">cat /root/flag.txt</code>
 </pre>
 
+- First we need to do this
+    - Remember to do this
+    - And then this
+- Next thing is to do that
+- Finally, we do this
+
+We are done and get the flag FLAG{This_is_4_fl4g}

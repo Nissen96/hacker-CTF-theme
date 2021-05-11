@@ -142,7 +142,7 @@ footer {
 #main_content {
   width: 70%;
   margin-left: 5%;
-  margin-bottom: 100px !important;
+  margin-bottom: 150px !important;
   float: left;
   -webkit-font-smoothing: antialiased;
 }
@@ -168,12 +168,6 @@ h1, h2, h3, h4, h5, h6 {
 #main_content h1 {
   font-size: 30px;
   vertical-align: baseline;
-}
-
-#main_content h1 span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 #main_content h2 {
@@ -475,7 +469,7 @@ pre {
   color: $default;
 }
 
-.points {
+.text-right {
   float: right;
   font-size: smaller;
 }

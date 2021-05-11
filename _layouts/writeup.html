@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<h3 class="mt-0 mb-2 d-flex justify-content-between">
-  <span>{{ page.ctf }}</span> <span>{{ page.date | date: '%Y' }}</span>
-</h5>
+<h3 class="mt-0 mb-2">
+  <span>{{ page.ctf }}</span> <span class="text-right">{{ page.date | date: '%Y' }}</span>
+</h3>
 
 
-<h1 class="d-flex justify-content-between">
-  <span>{{ page.title }}</span> <span class="points">[{{ page.points }} pts]</span>
+<h1>
+  <span>{{ page.title }}</span> <span class="text-right">[{{ page.points }} pts]</span>
 </h1>
 
 {% if page.description != "" %}
