@@ -51,7 +51,6 @@
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
       </div>
-      <br>
 
       {% if page.layout == 'writeup' %}
       {% include writeup_navlinks.html isSidebar=true %}
@@ -110,11 +109,7 @@
         $('footer').show();
         $('#navbarSupportedContent').css('max-height', 'unset');
         $('.navbar-collapse').collapse('hide');
-        if (document.body.clientHeight - $('#header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
-          $('footer').css("position", "unset");
-        } else {
-          $('footer').css("position", "fixed");
-        }
+        $('footer').css("position", "fixed");
       }
       else {
         $('#bottom-bar').show();
