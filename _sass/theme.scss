@@ -70,7 +70,7 @@ li {
   justify-content: center;
   position: fixed;
   background: #000;
-  width: 25%;
+  width: 20%;
   height: 100%;
   float: left;
   padding: 10px;
@@ -92,9 +92,9 @@ footer {
 }
 
 #content, #comments {
-  width: 75%;
+  width: 80%;
   overflow-y: overlay;
-  margin-top: 20px;
+  margin-top: 50px;
   float: right;
 }
 
@@ -139,7 +139,7 @@ footer {
 /* Main Content
 */
 
-#main_content, #disqus_container {
+#main_content {
   width: 70%;
   margin-left: 5%;
   margin-bottom: 0px !important;
@@ -540,12 +540,12 @@ pre {
     width: 100%;
   }
 
-  #main_content, #disqus_container {
+  #main_content {
     width: 90%;
   }
 }
 
-#comments, #disqus_container {
+#comments {
   margin-bottom: 0px !important;
   margin-top: 0px !important;
 }
