@@ -2,17 +2,15 @@
 layout: default
 ---
 
-<h5 class="mt-0 mb-2">{{ page.category | replace: '-', ' ' }}</h5>
+<h5 class="mt-0 mb-2">{{ page.ctf }}</h5>
 <h1 class="d-flex w-100 justify-content-between"><span>{{ page.title }}</span> <span class="points"> [{{ page.points }} pts] </span></h1>
 
-{% if page.chall_description %}
-<img style="display: none;" src="{{ page.chall_description }}"" alt=" Challenge Description">
+{% if page.description != "" %}
 <div id="desc_modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-body">
-        <img class="chall_description" src="{{ page.chall_description }}" style="max-height: 500px;"
-          alt="Challenge Description">
+        {{ page.description | markdownify }}
       </div>
     </div>
   </div>
@@ -23,11 +21,8 @@ layout: default
   </button>
 </h4>
 {% endif %}
-<script>
 
-</script>
-
-{{content}}
+{{ content }}
 
 <div id="share-links">
   <span id="divider-line">____</span>
