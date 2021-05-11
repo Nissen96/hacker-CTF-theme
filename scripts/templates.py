@@ -1,6 +1,6 @@
 ctf_overview = '''---
 layout: ctf_overview
-title: {0}
+ctf: {0}
 date: {1}
 ---
 '''
