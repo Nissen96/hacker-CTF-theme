@@ -2,8 +2,14 @@
 layout: default
 ---
 
-<h5 class="mt-0 mb-2">{{ page.ctf }}</h5>
-<h1 class="d-flex w-100 justify-content-between"><span>{{ page.title }}</span> <span class="points"> [{{ page.points }} pts] </span></h1>
+<h3 class="mt-0 mb-2 d-flex w-100 justify-content-between">
+  <span>{{ page.ctf }}</span> <span>{{ page.date | date: '%Y' }}</span>
+</h5>
+
+
+<h1 class="d-flex w-100 justify-content-between">
+  <span>{{ page.title }}</span> <span class="points">[{{ page.points }} pts]</span>
+</h1>
 
 {% if page.description != "" %}
 <div id="desc_modal" class="modal fade" tabindex="-1" role="dialog">
@@ -28,7 +34,11 @@ layout: default
   <span id="divider-line">____</span>
   <br><br>
   <small>{{ page.date | date: "%-d %B %Y" }}</small>
-  {% include tags.html %}
+  {% if page.tags %}
+  <div>
+    Tags: {% include tags.html tags=page.tags %}
+  </div>
+  {% endif %}
   <br>
   Share this writeup:&nbsp;
   <a

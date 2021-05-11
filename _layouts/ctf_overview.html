@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1 class="d-flex w-100 justify-content-between">
+    <span>{{ page.ctf }}</span> <span>{{ page.date | date: '%Y'}}</span>
+</h1>
 
 {{ page.content }}
 
