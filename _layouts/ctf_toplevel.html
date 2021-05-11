@@ -7,7 +7,7 @@ layout: default
 
 {{ content }}
 
-{% assign ctfsByYear = site.writeups | group_by_exp: "ctf", "ctf.date | date: '%Y'" | reverse %}
+{% assign ctfsByYear = site.writeups | sort: "date" | reverse | group_by_exp: "ctf", "ctf.date | date: '%Y'" %}
 {% for year in ctfsByYear %}
 {{ year.name }}
 <br>
@@ -18,7 +18,7 @@ layout: default
     {{ ctf.name }}
   </a>
 
-  {% assign challs = ctf.items | where: "layout", "writeup" %}
+  {% assign challs = ctf.items | where: "layout", "writeup" | sort: "title" %}
   <ul style="padding-top: 0.1em;">
     {% for chall in challs %}
     <li style="line-height: 1; padding-top: 0.4em;">
