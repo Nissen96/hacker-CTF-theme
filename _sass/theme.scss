@@ -70,10 +70,10 @@ li {
   justify-content: center;
   position: fixed;
   background: #000;
-  width: 25%;
+  width: 20%;
   height: 100%;
   float: left;
-  padding: 10px;
+  padding: 20px;
   margin: 0 0 40px 0;
 }
 
@@ -92,9 +92,9 @@ footer {
 }
 
 #content, #comments {
-  width: 75%;
+  width: 80%;
   overflow-y: overlay;
-  margin-top: 20px;
+  margin-top: 50px;
   float: right;
 }
 
@@ -139,10 +139,10 @@ footer {
 /* Main Content
 */
 
-#main_content, #disqus_container {
+#main_content {
   width: 70%;
   margin-left: 5%;
-  margin-bottom: 0px !important;
+  margin-bottom: 150px !important;
   float: left;
   -webkit-font-smoothing: antialiased;
 }
@@ -168,12 +168,6 @@ h1, h2, h3, h4, h5, h6 {
 #main_content h1 {
   font-size: 30px;
   vertical-align: baseline;
-}
-
-#main_content h1 span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 #main_content h2 {
@@ -443,7 +437,7 @@ div.code-toolbar > .toolbar > .toolbar-item > a[download]{
   margin-bottom: 10px;
 }
 
-blockquote{
+blockquote {
   margin: 0px !important;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
@@ -475,7 +469,7 @@ pre {
   color: $default;
 }
 
-.points {
+.text-right {
   float: right;
   font-size: smaller;
 }
@@ -540,12 +534,12 @@ pre {
     width: 100%;
   }
 
-  #main_content, #disqus_container {
+  #main_content {
     width: 90%;
   }
 }
 
-#comments, #disqus_container {
+#comments {
   margin-bottom: 0px !important;
   margin-top: 0px !important;
 }

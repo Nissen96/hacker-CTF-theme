@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h2> Search by Tag </h2>
+<h2> Search by Tag, Challenge, or CTF </h2>
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -10,7 +10,7 @@ layout: default
             <i class="fa fa-search" aria-hidden="true"></i>
         </span>
     </div>
-    <input id="search" type="text" class="form-control" placeholder="Enter tag" aria-label="Enter tag">
+    <input id="search" type="text" class="form-control" placeholder="Enter search term" aria-label="Enter tag">
 </div>
 
 <script>
@@ -19,13 +19,16 @@ layout: default
             $(e).removeClass('collapse');
             $(e).addClass('collapse');
         });
-        var regex = RegExp(searchTerm);
+
+        if (searchTerm == '')
+            return false;
+
         $('.search-list')
-            .filter(function () {
-                var tags = $(this).data('tags');
-                if (tags !== '' && $('#search').val() !== '')
-                    return regex.test(tags);
-                else return false;
+            .filter((idx, chall) => {
+                const challInfo = $(chall).data('searchable');
+                if (challInfo == '')
+                    return false;
+                return challInfo.includes(searchTerm);
             })
             .each((n, e) => {
                 $(e).removeClass('collapse');
@@ -43,29 +46,20 @@ layout: default
 </script>
 
 <div class="list-group">
-    {% for post in site.writeups %}
-    <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
-        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
-        <div class="d-flex w-100 justify-content-between">
-            <h6 class="mb-1">{{ post.category }}</h6>
+    {% assign writeups = site.writeups | where: 'layout', 'writeup' %}
+    {% for post in writeups %}
+    <a
+        href="{{ post.url | relative_url }}"
+        data-searchable="{{ post.ctf | downcase }} {{ post.title | downcase }} {{ post.tags | join: ' ' | downcase }}"
+        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse"
+    >
+        <div class="d-flex justify-content-between">
+            <h6 class="mb-2">{{ post.ctf }}</h6>
             <small class="text-muted">{{ post.date | date: '%d %B %Y' }}</small>
         </div>
-        <h2 class="mb-1">{{ post.title }}</h2>
-        <p class="mb-0">{{ post.content | strip_html | truncatewords: 20 }}</p>
+        <h2 class="mb-2">{{ post.title }}</h2>
         <small class="text-muted">{{ post.tags | join: ', ' }}</small>
     </a>
     {% endfor %}
 
-    {% for post in site.solutions %}
-    <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
-        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
-        <div class="d-flex w-100 justify-content-between">
-            <h6 class="mb-1">{{ post.contest_name }}</h6>
-            <small class="text-muted">{{ post.date | date: '%d %B %Y' }}</small>
-        </div>
-        <h2 class="mb-1">{{ post.title }}</h2>
-        <p class="mb-0">{{ post.excerpt }}</p>
-        <small class="text-muted">{{ post.tags | join: ', ' }}</small>
-    </a>
-    {% endfor %}
 </div>
