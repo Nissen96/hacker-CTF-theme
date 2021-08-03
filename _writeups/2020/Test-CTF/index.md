@@ -1,7 +1,6 @@
 ---
 layout: ctf_overview
-title: Test CTF
-category: Test-CTF
+ctf: Test CTF
 date: 2020-07-24
 ---
 

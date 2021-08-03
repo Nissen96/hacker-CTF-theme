@@ -36,12 +36,12 @@
 	},
 	"Writeups": {
 		"prefix": ["writeup"],
-		"body": "---\nlayout: writeup\ncategory: ${1:CTF_name}\nchall_description: ${2:Description_image_url}\npoints: ${3:Points}\ntags: ${4:Tags}\n---\n\n{5:Writeup_Content}",
+		"body": "---\nlayout: writeup\ntitle: ${1:Title}\nctf: ${2:CTF}\npoints: ${3:Points}\nsolves: ${4:Solves}\ndate: ${5:yyyy}-${6:mm}-${7:dd}\ntags:\n    - ${8:Tag}\n    - ${9:Tag}\ndescription: |-\n    ${10:Description}\n---\n\n${11:Writeup}",
 		"description": "Template for writeup"
 	},
 	"Overview": {
 		"prefix": ["overview"],
-		"body": "---\nlayout: ctf_overview\ncategory: ${1:CTF_Name}\npermalink: /writeups/:year/${1:CTF_Name}\n---\n\n${2:Any_Content}",
+		"body": "---\nlayout: ctf_overview\nctf: ${1:CTF_Name}\ndate: ${2:yyyy}-${3:mm}-${4:dd}\n---\n\n${5:Description}",
 		"description": "Template for CTF Overview"
 	}
 }

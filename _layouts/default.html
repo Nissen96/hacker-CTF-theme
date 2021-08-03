@@ -20,7 +20,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/prism.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/assets/css/prism.css' | prepend: site.baseurl }}">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   {% if site.google_site_verification_content %}
@@ -50,17 +50,12 @@
         <a id="a-title" href="{{ '/' | relative_url }}">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        {% include navbar.html %}
       </div>
-      <br>
 
       {% if page.layout == 'writeup' %}
       {% include writeup_navlinks.html isSidebar=true %}
       {% endif %}
 
-      {% if page.layout == 'solution' %}
-      {% include solution_navlinks.html isSidebar=true %}
-      {% endif %}
       <div id="bottom-bar">
         {% include social_links.html %}
       </div>
@@ -73,20 +68,11 @@
     </section>
   </div>
 
-  <div id="comments" class="container">
-    <section id="disqus_container">
-      {% if page.comments and site.disqus_forum_shortname %}
-      <hr>
-      {% include disqus.html %}
-      {% endif %}
-    </section>
-  </div>
-
   <footer>
     {% include social_links.html %}
   </footer>
 
-  <script src="{{ "/assets/js/prism.js" | absolute_url }}"></script>
+  <script src="{{ '/assets/js/prism.js' | absolute_url }}"></script>
   <button onclick="topFunction()" class="fa fa-arrow-up" id="top" title="Go to top"></button>
   <script>
     topScroll = document.getElementById("top");
@@ -123,11 +109,7 @@
         $('footer').show();
         $('#navbarSupportedContent').css('max-height', 'unset');
         $('.navbar-collapse').collapse('hide');
-        if (document.body.clientHeight - $('#header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
-          $('footer').css("position", "unset");
-        } else {
-          $('footer').css("position", "fixed");
-        }
+        $('footer').css("position", "fixed");
       }
       else {
         $('#bottom-bar').show();
